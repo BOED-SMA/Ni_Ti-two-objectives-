@@ -2,14 +2,14 @@ clear
 clc
 
 % 1) DEFINE INPUT SPACE 
-VR1 = input('input the array of possible values of vaiable 1: \n');  %Variable 1
-VR2 = input('input the array of possible values of vaiable 2: \n'); % Variable 2
+VR1 = 0:0.005:0.1;  %Variable 1
+VR2 = 50.2:0.1:51.2; % Variable 2
 % 2) DEFINE OBJECTIVE FUNCTIONS
-objectfun = input('input the function handles of two objectives: \n'); % Define Objective functions
+objectfun = @(y) [abs(y(:, 2)-303),  abs(y(:, 2)-y(:, 3)-40)]; % Define Objective functions
 % 3) DEFINE nE and nI
-nE= input('input the number of evalutions of the BOED process: \n'); % Preselected number of evaluations of he BOED process. Each evaluation correspods to an experiment
-nI= input('input the initial number: \n'); % Number of randomly selected experiments
-reference_point = input('input the reference point for the objectives domain: \n');
+nE=40; % Preselected number of evaluations of he BOED process. Each evaluation correspods to an experiment
+nI=1; % Number of randomly selected experiments
+reference_point = [83, 136];
 
 
 % CODE BEGINNING 
@@ -340,8 +340,8 @@ set(gca,'fontName','Arial')
 set(gca,'linewidth',2)
 set(gca, 'box', 'on')
 points=500;% THE NUMBER OF THE POINTS THAT I WILL DISCRITIZE THE CMAP
-xlabel('Objective 1','FontSize', 36)
-ylabel('Objective 2','FontSize', 36)
+xlabel('|A_f-30| (^oC)','FontSize', 36)
+ylabel('|A_f-M_s-40| (^oC)','FontSize', 36)
 axis([0 OBJECTIVE1_max*scalex 0 OBJECTIVE2_max*scaley])
 daspect([OBJECTIVE1_max*scalex OBJECTIVE2_max*scaley 1])
 

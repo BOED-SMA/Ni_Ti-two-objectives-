@@ -1,0 +1,6 @@
+Title: Bayesian Optimal Experimental Design Framework
+Version: 1.0
+Date: 2017-11-07
+Author: G. Zhao, A. Solomou, S. Boluki, D. C. Lagoudas, A. Raymundo, and X. Qian,
+Maintainer: Guang Zhao <lemon15203@tamu.edu>
+Description: Combine SMA micromechanical model with Bayesian Optimization Experimental Design. To apply this method on other project, user should provide their own 'CALCULATE_OBJECTIVES' function with corresponding 'XSPACE' and 'objectfun'. 
